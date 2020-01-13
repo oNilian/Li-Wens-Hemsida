@@ -1,1 +1,159 @@
-    
+
+@Colorbtn: gray;
+@Color: #C5B0FF;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    //** borderbox prevents from padding&margin adding size to its own object **//
+}
+
+body {
+    // width: 100%;
+    // height: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+
+    // ** Scroll Snap ** //
+    // scroll-snap-type: y mandatory;
+    // overflow-y: scroll;
+    // ** Scroll Snap ** //
+
+    // scroll-snap-align: start; < whever you want the scroll to scroll into
+}
+
+nav {
+    display: flex;
+    align-items: flex-start;
+}
+
+.navMenu {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    background-color: black;
+    opacity: 0.75;
+    list-style-type: none;
+    position: fixed;
+    width: 100%;
+    height: 7.5%;
+    align-items: center;
+    z-index: 2;
+    margin: 0;
+}
+
+.navHomeBtn:hover {
+   color: lighten(@Colorbtn,20%);
+   cursor: pointer;
+}
+
+.navInfoBtn:hover {
+    color: lighten(@Colorbtn,20%);
+    cursor: pointer;
+ }
+
+ .navStoreBtn:hover {
+    color: lighten(@Colorbtn,20%);
+    cursor: pointer;
+ }
+
+ .navContactBtn:hover {
+    color: lighten(@Colorbtn,20%);
+    cursor: pointer;
+ }
+
+header {
+    background-image: 
+        linear-gradient(
+        to right bottom, 
+        rgba(197, 176, 255, 0.65), 
+        rgba(193, 174, 243, 0.65)),
+        url(images/);
+    height: 80vh;
+    width: auto;
+    background-size: cover;
+    background-position: center 20%;
+    clip-path: polygon(0 20%, 100% 0, 100% 20%, 0 100%);
+    margin: 6% 0 0 0;
+    //** first value is Horizontal - second is vertical **//
+    // scroll-snap-align: start; 
+}
+
+.headerContainer-Main {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // width: 100%;
+}
+
+.headerPrimary {
+    color: black;
+    text-transform: uppercase;
+
+    // backface-visibility: hidden;
+}
+
+.headerPrimary-Main {
+    display: block;
+    font-weight: 400;
+    letter-spacing: 7px;
+    text-align: center;
+
+    animation-name: movesFromLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    // backface-visibility: hidden;
+}
+
+.headerPrimary-Sub {
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    letter-spacing: 2px;
+
+    animation: movesFromRight 1s ease-out;
+    // animation-name: movesFromRight;
+    // animation-duration: 1s;
+    // animation-timing-function: ease-out;
+    // backface-visibility: hidden;
+}
+
+
+
+
+@keyframes movesFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    80% {
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes movesFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    80% {
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
